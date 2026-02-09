@@ -1,41 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Crystal Electronics</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crystal PDF Maker</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
-
 <body>
 
-<header class="header">
-  <h1>Crystal Electronics</h1>
-  <input type="text" placeholder="Search products...">
-</header>
+<div class="bg"></div>
 
-<section class="hero">
-  <h2>Future Tech Store</h2>
-  <p>Crystal UI Experience</p>
-</section>
+<div class="app">
 
-<section class="products">
-  <div class="product">
-    <img src="https://via.placeholder.com/200">
-    <h3>Crystal Phone</h3>
-    <p>$999</p>
+  <h1>✨ Crystal Image → PDF</h1>
+
+  <div class="upload-card" id="dropZone">
+    <p>Drag & Drop Images Here</p>
+    <input type="file" id="fileInput" multiple accept="image/*">
   </div>
 
-  <div class="product">
-    <img src="https://via.placeholder.com/200">
-    <h3>Glass Laptop</h3>
-    <p>$1799</p>
-  </div>
+  <div class="preview" id="preview"></div>
 
-  <div class="product">
-    <img src="https://via.placeholder.com/200">
-    <h3>Neon Headphones</h3>
-    <p>$299</p>
-  </div>
-</section>
+  <button id="convertBtn">Convert to PDF</button>
+
+</div>
 
 <script src="script.js"></script>
 </body>
