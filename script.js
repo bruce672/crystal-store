@@ -1,20 +1,12 @@
 const { jsPDF } = window.jspdf;
 
-const dropZone = document.getElementById("dropZone");
-const fileInput = document.getElementById("fileInput");
+const input = document.getElementById("fileInput");
 const preview = document.getElementById("preview");
-const convertBtn = document.getElementById("convertBtn");
+const button = document.getElementById("convertBtn");
 
 let images = [];
 
-fileInput.addEventListener("change", handleFiles);
-dropZone.addEventListener("dragover", e => e.preventDefault());
-dropZone.addEventListener("drop", e => {
-  e.preventDefault();
-  handleFiles({ target: { files: e.dataTransfer.files } });
-});
-
-function handleFiles(e) {
+input.addEventListener("change", e => {
   const files = [...e.target.files];
 
   files.forEach(file => {
@@ -25,7 +17,7 @@ function handleFiles(e) {
     };
     reader.readAsDataURL(file);
   });
-}
+});
 
 function showPreview() {
   preview.innerHTML = "";
@@ -36,8 +28,11 @@ function showPreview() {
   });
 }
 
-convertBtn.addEventListener("click", () => {
-  if (images.length === 0) return alert("Add images first!");
+button.addEventListener("click", () => {
+  if (images.length === 0) {
+    alert("Add images first!");
+    return;
+  }
 
   const pdf = new jsPDF();
 
@@ -46,5 +41,5 @@ convertBtn.addEventListener("click", () => {
     pdf.addImage(img, "JPEG", 10, 10, 190, 270);
   });
 
-  pdf.save("crystal-pdf.pdf");
+  pdf.save("output.pdf");
 });
