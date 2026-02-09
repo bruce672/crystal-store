@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Crystal PDF Maker</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-</head>
-<body>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crystal PDF Maker</title>
 
-<div class="bg"></div>
+<link rel="stylesheet" href="style.css">
+
+<!-- jsPDF CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
 
 <div class="app">
 
-  <h1>✨ Crystal Image → PDF</h1>
+<h1>Crystal Image → PDF</h1>
 
-  <div class="upload-card" id="dropZone">
-    <p>Drag & Drop Images Here</p>
-    <input type="file" id="fileInput" multiple accept="image/*">
-  </div>
+<div class="upload" id="dropZone">
+Click or Drop Images
+<input type="file" id="fileInput" multiple accept="image/*">
+</div>
 
-  <div class="preview" id="preview"></div>
+<div id="preview"></div>
 
-  <button id="convertBtn">Convert to PDF</button>
+<button id="convertBtn">Make PDF</button>
 
 </div>
 
