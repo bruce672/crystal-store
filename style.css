@@ -1,51 +1,72 @@
-body {
+* {
   margin: 0;
-  font-family: Arial;
-  background: linear-gradient(135deg,#020617,#0f172a);
-  color: white;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 40px;
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255,255,255,0.15);
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  overflow-x: hidden;
 }
 
-.header input {
-  padding: 10px;
-  border-radius: 10px;
-  border: none;
-  background: rgba(255,255,255,0.1);
-  color: white;
+.bg {
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(40px);
 }
 
-.hero {
+.app {
   text-align: center;
-  padding: 100px 20px;
-}
-
-.products {
-  display: flex;
-  gap: 30px;
-  justify-content: center;
   padding: 40px;
+  color: white;
 }
 
-.product {
-  width: 220px;
-  padding: 20px;
+h1 {
+  margin-bottom: 20px;
+}
+
+.upload-card {
+  border: 2px dashed rgba(255,255,255,0.4);
+  padding: 40px;
   border-radius: 20px;
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,0.2);
-  text-align: center;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(15px);
+  cursor: pointer;
   transition: 0.3s;
 }
 
-.product:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 40px rgba(255,255,255,0.2);
+.upload-card:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+  justify-content: center;
+}
+
+.preview img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 14px;
+  background: white;
+  color: #2575fc;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
 }
